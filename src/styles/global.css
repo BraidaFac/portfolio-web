@@ -1,0 +1,16 @@
+body {
+    background: var(--background);
+    color: var(--on-background);
+    font-family: Arial, sans-serif;
+}
+:root {
+    --background: #101010;
+    --on-background: #f2f2f2;
+}
+
+.section-info {
+		padding: 0 3rem;
+		height: 100vh;
+		background-image: radial-gradient(circle closest-corner at 50% 0, rgba(130, 49, 49, 0.15), rgba(0, 0, 0, 0));
+        background-repeat: no-repeat;
+}

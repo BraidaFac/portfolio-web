@@ -1,0 +1,28 @@
+---
+const href=Astro.props.href;
+---
+
+<a href={href}>
+  <slot/>
+</a>
+
+
+<style>
+  a{
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border-radius: 4rem;
+    width: 6rem;
+    text-align: center;
+    transition: 0.5s;
+  }
+  a:hover {
+    background-color: #4d4c4c31;
+  }
+  </style>
+
+  <script>
+
+  </script>

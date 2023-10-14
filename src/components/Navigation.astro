@@ -1,0 +1,122 @@
+---
+import { fade } from "astro:transitions";
+const url = Astro.url.pathname;
+
+---
+<div  class="nav-bar flex flex-col gap-8 md:gap-0 md:flex-row md:justify-between align-bottom box-border items-center h-full">
+  <div class="nav-left-wrapper flex flex-column justify-center">
+    <div class="logo-block">
+      <div class="text-block">
+        <div class="flex flex-row ">
+          <svg xmlns="http://www.w3.org/2000/svg" class="inline icon icon-tabler icon-tabler-device-laptop" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+               <path d="M3 19l18 0"></path>
+               <path d="M5 6m0 1a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1z"></path>
+            </svg>
+          <p class="name-text text-4xl">Facundo Braida</p>
+        </div>
+        <p class="carrer-text text-center md:text-left ml-10">Ingeniero en Sistemas</p>
+      </div>
+    </div>
+  </div>
+  <div  transition:persist class="relative nav-pill-wraper w-48 h-12 flex flex-row items-center">
+    <a  class:list={['btn-about']} href="/" >Sobre mi</a>
+    <a  class:list={['btn-proyect']}  href="/proyect">Proyectos</a>
+    <div class="absolute top-0 transition-all duration-300' " id="slider"></div>
+  </div>
+  <div class="nav-right-wapper hidden md:block">
+    <a target='_blank' href="https://www.linkedin.com/in/braidafacu">Linkedin-></a>
+    <a target='_blank'href="https://drive.google.com/drive/folders/1LfCuzI0iTYOmZZOzH-k9nDpUvnhcfVmu?usp=sharing">Resume-></a>
+  </div>
+</div>
+
+<script >
+  const btn_about = document.querySelector('.btn-about');
+  const btn_proyect = document.querySelector('.btn-proyect');
+  const slider= document.querySelector('#slider');
+  if(window.location.pathname === '/'){
+    slider?.classList.add('left-10')
+    btn_about?.classList.add('active');
+  }
+  else{
+    slider?.classList.add('right-10')
+    btn_proyect?.classList.add('active');
+  }
+
+  btn_about?.addEventListener('click', () => {
+    btn_about?.classList.add('active');
+    btn_proyect?.classList.remove('active');
+    slider?.classList.remove('right-10');
+    slider?.classList.add('left-10');
+  });
+  
+  btn_proyect?.addEventListener('click', () => {
+    btn_proyect?.classList.add('active');
+    btn_about?.classList.remove('active');
+    slider?.classList.remove('left-10');
+    slider?.classList.add('right-10');
+    });
+
+</script>
+<style lang="scss">
+
+
+  #slider {
+    width: 1rem; /* Ancho del slider */
+    height: 3px; /* Altura del slider */
+    background-color: #fff;
+  box-shadow: 0 0 15px 5px #fff, /* inner white */
+  0 0 35px 15px #008cff, /* inner blue */
+  0 0 350px 20px #0ff;
+    
+}
+  .nav-bar{
+    font-family: 'Neue Montreal',sans-serif;
+    font-weight: 400;
+  }
+  
+  a{
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border-radius: 4rem;
+    width: 6rem;
+    text-align: center;
+    transition: 0.5s;
+  }
+  a:hover {
+     background-color: #4d4c4c31;
+  }
+  .nav-pill-wraper:hover {
+    background-color: #6d6d6d31;
+  }
+  
+  .nav-right-wapper{
+    a{
+      padding: 0.8rem;
+    }
+  }
+  .nav-pill-wraper {
+    border-radius: 4rem;
+    border: 1px solid rgba(242, 242, 242, .1);
+    background-color: rgba(242, 242, 242, .05);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+    transition: box-shadow 1s cubic-bezier(.23, 1, .32, 1), border .6s cubic-bezier(.165, .84, .44, 1);
+  }
+
+  .active{
+    background-color: #66666623;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+  }
+  .name-text{
+    text-shadow: 0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 -5px 25px rgba(255, 255, 255, .3);
+  }
+  .carrer-text{
+    font-size:1rem;
+    font-weight: 300;
+    color: #f2f2f27b;
+  }
+
+</style>
