@@ -1,7 +1,6 @@
 ---
 import { fade } from "astro:transitions";
 const url = Astro.url.pathname;
-
 ---
 <div  class="nav-bar flex flex-col gap-8 md:gap-0 md:flex-row md:justify-between align-bottom box-border items-center h-full">
   <div class="nav-left-wrapper flex flex-column justify-center">
@@ -24,14 +23,15 @@ const url = Astro.url.pathname;
     <a  class:list={['btn-proyect']}  href="/proyect">Proyectos</a>
     <div class="absolute top-0 transition-all duration-300' " id="slider"></div>
   </div>
-  <div class="nav-right-wapper hidden md:block">
-    <a target='_blank' href="https://www.linkedin.com/in/braidafacu">Linkedin-></a>
-    <a target='_blank'href="https://drive.google.com/drive/folders/1LfCuzI0iTYOmZZOzH-k9nDpUvnhcfVmu?usp=sharing">Resume-></a>
-  </div>
+  <div transition:persist class="nav-right-wapper hidden md:flex md:flex-row md:items-center">
+    <a target='_blank' class="flex flex-row"href="https://www.linkedin.com/in/braidafacu">Linkedin<span class="arrow"><span/></a>
+    <a target='_blank' class="flex flex-row" href="https://drive.google.com/drive/folders/1LfCuzI0iTYOmZZOzH-k9nDpUvnhcfVmu?usp=sharing">Resume<span class="arrow"><span/></a>
+  </span>
 </div>
 
 <script >
 
+  import Lottie  from "lottie-web";
   
   const btn_about = document.querySelector('.btn-about');
   const btn_proyect = document.querySelector('.btn-proyect');
@@ -59,7 +59,18 @@ const url = Astro.url.pathname;
     slider?.classList.add('right-10');
     });
 
-</script>
+    const arrows =document.querySelectorAll('.arrow');
+    if(arrows.length>0){
+      arrows.forEach((arrow)=>{
+      Lottie.loadAnimation({
+        container: arrow,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/src/assets/Forward.json'
+      })
+    })}
+    </script>
 <style lang="scss">
 
 
