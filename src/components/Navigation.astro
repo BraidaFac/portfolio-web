@@ -20,70 +20,88 @@ const url = Astro.url.pathname;
   </div>
   <div  transition:persist class="relative md:right-16 nav-pill-wraper md:w-48 md:h-12 flex flex-row items-center">
     <a  class:list={['btn-about']} href="/" >Sobre mi</a>
-    <a  class:list={['btn-proyect']}  href="/proyect">Proyectos</a>
-    <div class="absolute top-0 transition-all duration-300' " id="slider"></div>
+    <a  class:list={['btn-project']}  href="/project">Proyectos</a>
+    <div class="absolute top-0" id="slider"></div>
   </div>
   <div transition:persist class="nav-right-wapper hidden md:flex md:flex-row md:items-center">
-    <a target='_blank' class="flex flex-row"href="https://www.linkedin.com/in/braidafacu">Linkedin<span class="arrow"><span/></a>
-    <a target='_blank' class="flex flex-row" href="https://drive.google.com/drive/folders/1LfCuzI0iTYOmZZOzH-k9nDpUvnhcfVmu?usp=sharing">Resume<span class="arrow"><span/></a>
+    <a target='_blank' class="flex flex-row"href="https://www.linkedin.com/in/braidafacu">Linkedin 
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-right-filled" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z" stroke-width="0" fill="currentColor"></path>
+      </svg>  
+    </a>
+    <a target='_blank' class="flex flex-row" href="https://drive.google.com/drive/folders/1LfCuzI0iTYOmZZOzH-k9nDpUvnhcfVmu?usp=sharing">Resume 
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-right-filled" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z" stroke-width="0" fill="currentColor"></path>
+        </svg>
+    </a>
   </span>
 </div>
-
 <script >
-
-  import Lottie  from "lottie-web";
-  
   const btn_about = document.querySelector('.btn-about');
-  const btn_proyect = document.querySelector('.btn-proyect');
-  const slider= document.querySelector('#slider');
+  const btn_project = document.querySelector('.btn-project');
+  const slider= document.getElementById('slider')
   if(window.location.pathname === '/'){
-    slider?.classList.add('left-10')
     btn_about?.classList.add('active');
+    slider?.classList.add('leftPosition');
+    slider?.classList.remove('rightPosition');
   }
   else{
-    slider?.classList.add('right-10')
-    btn_proyect?.classList.add('active');
+    btn_project?.classList.add('active');
+    slider?.classList.add('rightPosition')
+    slider?.classList.remove('leftPosition')
   }
 
-  btn_about?.addEventListener('click', () => {
+  btn_about?.addEventListener('click', (e) => {
+    e.preventDefault();
     btn_about?.classList.add('active');
-    btn_proyect?.classList.remove('active');
-    slider?.classList.remove('right-10');
-    slider?.classList.add('left-10');
-  });
+    btn_project?.classList.remove('active');
+    if(slider){
+      slider.style.left = '40px';
+    }
+    setTimeout(() => {
+          window.location.href = "/";
+        }, 300);
+      });
+
+
   
-  btn_proyect?.addEventListener('click', () => {
-    btn_proyect?.classList.add('active');
+  btn_project?.addEventListener('click', (e) => {
+    e.preventDefault();
+    btn_project?.classList.add('active');
     btn_about?.classList.remove('active');
-    slider?.classList.remove('left-10');
-    slider?.classList.add('right-10');
-    });
 
-    const arrows =document.querySelectorAll('.arrow');
-    if(arrows.length>0){
-      arrows.forEach((arrow)=>{
-      Lottie.loadAnimation({
-        container: arrow,
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: '../assets/Forward.json'
-      })
-    })}
-    </script>
+    if(slider){
+      slider.style.left = "calc(50% + 2.5rem)";
+    }
+     setTimeout(() => {
+          window.location.href = "/project";
+        }, 300);
+      });
+
+</script>
+
 <style lang="scss">
-
 
   #slider {
     width: 1rem; /* Ancho del slider */
     height: 3px; /* Altura del slider */
     background-color: #fff;
-  box-shadow: 0 0 15px 5px #fff, /* inner white */
-  0 0 35px 15px #008cff, /* inner blue */
-  0 0 350px 20px #0ff;
-    
-}
-  .nav-bar{
+    transition : left 0.3s ease-in-out;
+    box-shadow: 0 0 15px 5px #fff, 
+  /* inner white */0 0 35px 15px #008cff, 
+  /* inner blue */0 0 350px 20px #0ff;
+  }
+  .rightPosition {
+        left: calc(50% + 2.5rem);
+  }
+  .leftPosition {
+        left: 40px;
+      }
+
+  
+  .nav-bar {
     font-family: 'Neue Montreal',sans-serif;
     font-weight: 400;
   }
