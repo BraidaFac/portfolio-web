@@ -16,12 +16,22 @@ import figma from '../../assets/techs/figma.png'
 import excel from '../../assets/techs/excel.png'
 import svelte from '../../assets/techs/svelte.png'
 import astro from '../../assets/techs/astro.png'
+import vscode from '../../assets/techs/vscode.png'
+import eclipse from '../../assets/techs/eclipse.png'
+import spring from  '../../assets/techs/spring.png'
+import net from '../../assets/techs/netcore.png'
+import prisma from '../../assets/techs/prisma.png'
+import lucia from '../../assets/techs/lucia.svg'
+import larava from '../../assets/techs/laravel.png'
+import boostrap from '../../assets/techs/bootstrap.png'
+import tailwind from '../../assets/techs/tailwind.png'
+import python from '../../assets/techs/python.png'
 ---
 <div class=`techs md:w-2/4`>
      <h2 class="text-4xl tracking-wide">Skills</h2>
             <div>
                 <h3>Frontend</h3>
-                <div class='frontend h-10'>
+                <div class='frontend'>
                     <div class='techItem'>
                         <img src={html.src} alt="html" />
                         <p>HTML5</p>
@@ -42,16 +52,28 @@ import astro from '../../assets/techs/astro.png'
                         <img src={astro.src} alt="astro" />
                         <p>AstroJS</p>
                     </div>
+                     <div class='techItem'>
+                        <img src={tailwind.src} alt="tailwind" />
+                        <p>Tailwind</p>
+                    </div>
+                    <div class='techItem'>
+                        <img src={boostrap.src} alt="boostrap" />
+                        <p>Boostrap</p>
+                    </div> 
                   
                 </div>
             </div>
 
             <div>
                 <h3>Backend</h3>
-                <div class='backend h-10'>
+                <div class='backend'>
                     <div class="techItem">
                         <img src={java.src} alt="Java" />
                         <p>Java</p>
+                    </div>
+                    <div class="techItem">
+                        <img src={python.src} alt="Pyhton" />
+                        <p>Python</p>
                     </div>
                     <div class="techItem">
                         <img src={node.src} alt="Node" />
@@ -69,12 +91,20 @@ import astro from '../../assets/techs/astro.png'
                         <img src={express.src} alt="Express" />
                         <p>Express</p>
                     </div>
+                    <div class="techItem">
+                        <img src={net.src} alt="net" />
+                        <p>.Net Core</p>
+                    </div>
+                    <div class="techItem">
+                        <img src={spring.src} alt="Spring" />
+                        <p>Spring</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="h-10">
+            <div>
                 <h3>Extra</h3>
-                <div class='extra h-10'>
+                <div class='extra'>
                     <div class="techItem">
                         <img src={git.src} alt="Git" />
                         <p>Git</p>
@@ -87,11 +117,22 @@ import astro from '../../assets/techs/astro.png'
                         <img src={figma.src} alt="Figma" />
                         <p>Figma</p>
                     </div>
-  
                     <div class="techItem">
-                        <img src={excel.src} alt="Excel" />
-                        <p>Excel</p>
+                        <img src={vscode.src} alt="VsCode" />
+                        <p>VsCode</p>
+                    </div> 
+                    <div class="techItem">
+                        <img src={lucia.src} alt="Lucia" />
+                        <p>Lucia Auth</p>
+                    </div> 
+                    <div class="techItem">
+                        <img src={prisma.src} alt="Prisma" />
+                        <p>Prisma ORM</p>
                     </div>
+                    <div class="techItem">
+                        <img src={eclipse.src} alt="Eclipse" />
+                        <p>Eclipse</p>
+                    </div>  
                 </div>
             </div>
         </div>
