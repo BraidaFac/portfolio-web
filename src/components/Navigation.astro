@@ -2,7 +2,7 @@
 import { fade } from "astro:transitions";
 const url = Astro.url.pathname;
 ---
-<div  class="nav-bar flex flex-col gap-8 md:gap-0 md:flex-row md:justify-between align-bottom box-border items-center h-full">
+<div  class="nav-bar flex flex-col gap-8  md:flex-row lg:justify-between md:gap-20  align-bottom box-border items-center h-full">
   <div class="nav-left-wrapper flex flex-column justify-center">
     <div class="logo-block">
       <div class="text-block">
@@ -23,7 +23,7 @@ const url = Astro.url.pathname;
     <a  class:list={['btn-project']}  href="/project">Proyectos</a>
     <div class="absolute top-0" id="slider"></div>
   </div>
-  <div transition:persist class="nav-right-wapper hidden md:flex md:flex-row md:items-center">
+  <div transition:persist class="nav-right-wapper hidden lg:flex  md:flex-row md:items-center">
     <a target='_blank' class="flex flex-row"href="https://www.linkedin.com/in/braidafacu">Linkedin 
       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-right-filled" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -36,7 +36,7 @@ const url = Astro.url.pathname;
             <path d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z" stroke-width="0" fill="currentColor"></path>
         </svg>
     </a>
-  </span>
+  </div>
 </div>
 <script >
   const btn_about = document.querySelector('.btn-about');
@@ -90,8 +90,8 @@ const url = Astro.url.pathname;
     background-color: #fff;
     transition : left 0.3s ease-in-out;
     box-shadow: 0 0 15px 5px #fff, 
-  /* inner white */0 0 35px 15px #008cff, 
-  /* inner blue */0 0 350px 20px #0ff;
+  /* inner white */0 0 35px 15px #ffffff, 
+  /* inner blue */0 0 350px 20px rgb(243, 243, 243);
   }
   .rightPosition {
         left: calc(50% + 2.5rem);
