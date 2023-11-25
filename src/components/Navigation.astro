@@ -24,13 +24,13 @@ const url = Astro.url.pathname;
     <div class="absolute top-0" id="slider"></div>
   </div>
   <div transition:persist class="nav-right-wapper hidden lg:flex  md:flex-row md:items-center">
-    <a target='_blank' class="flex flex-row"href="https://www.linkedin.com/in/braidafacu">Linkedin 
+    <a target='_blank' class="flex flex-row h-12 mb-3"href="https://www.linkedin.com/in/braidafacu">Linkedin 
       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-right-filled" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
           <path d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z" stroke-width="0" fill="currentColor"></path>
       </svg>  
     </a>
-    <a target='_blank' class="flex flex-row" href="https://drive.google.com/drive/folders/1LfCuzI0iTYOmZZOzH-k9nDpUvnhcfVmu?usp=sharing">Resume 
+    <a target='_blank' class="flex flex-row h-12 mb-3" href="https://drive.google.com/drive/folders/1LfCuzI0iTYOmZZOzH-k9nDpUvnhcfVmu?usp=sharing">Resume 
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-right-filled" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z" stroke-width="0" fill="currentColor"></path>
@@ -89,9 +89,10 @@ const url = Astro.url.pathname;
     height: 3px; /* Altura del slider */
     background-color: #fff;
     transition : left 0.3s ease-in-out;
-    box-shadow: 0 0 15px 5px #fff, 
-  /* inner white */0 0 35px 15px #ffffff, 
-  /* inner blue */0 0 350px 20px rgb(243, 243, 243);
+    box-shadow: 0 0 15px 5px rgb(3, 96, 158), 
+  /* inner white */0 0 35px 15px rgb(3, 102, 168), 
+  /* inner blue */0 0 350px 20px rgb(5, 126, 207);
+  
   }
   .rightPosition {
         left: calc(50% + 2.5rem);
@@ -117,7 +118,12 @@ const url = Astro.url.pathname;
     transition: 0.5s;
   }
   a:hover {
-     background-color: #4d4c4c31;
+     background-image: radial-gradient(
+      at 52% 100%,
+      hsla(204, 86%, 29%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 52% 100%, hsla(241, 86%, 29%, 1) 0px, transparent 50%);;
   }
   .nav-pill-wraper:hover {
     background-color: #6d6d6d31;
