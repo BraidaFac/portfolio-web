@@ -1,113 +1,167 @@
 ---
-import { fade } from "astro:transitions";
+import { fade } from 'astro:transitions';
 const url = Astro.url.pathname;
 ---
-<div  class="nav-bar flex flex-col gap-8  md:flex-row lg:justify-between md:gap-20  align-bottom box-border items-center h-full">
+
+<div
+  class="nav-bar flex flex-col gap-8 md:flex-row lg:justify-between md:gap-20 align-bottom box-border items-center h-full"
+>
   <div class="nav-left-wrapper flex flex-column justify-center">
     <div class="logo-block">
       <div class="text-block">
-        <div class="flex flex-row ">
-          <svg xmlns="http://www.w3.org/2000/svg" class="inline icon icon-tabler icon-tabler-device-laptop" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-               <path d="M3 19l18 0"></path>
-               <path d="M5 6m0 1a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1z"></path>
-            </svg>
+        <div class="flex flex-row">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="inline icon icon-tabler icon-tabler-device-laptop"
+            width="40"
+            height="40"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M3 19l18 0"></path>
+            <path
+              d="M5 6m0 1a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1z"
+            ></path>
+          </svg>
           <p class="name-text text-2xl md:text-4xl">Facundo Braida</p>
         </div>
-        <p class="carrer-text text-center md:text-left ml-5 md:ml-10">Ingeniero en Sistemas</p>
+        <p class="carrer-text text-center md:text-left ml-5 md:ml-10">
+          Ingeniero en Sistemas
+        </p>
       </div>
     </div>
   </div>
-  <div  transition:persist class="relative md:right-16 nav-pill-wraper md:w-48 md:h-12 flex flex-row items-center">
-    <a  class:list={['btn-about']} href="/" >Sobre mi</a>
-    <a  class:list={['btn-project']}  href="/project">Proyectos</a>
+  <div
+    transition:persist
+    class="relative md:right-16 nav-pill-wraper md:w-48 md:h-12 flex flex-row items-center"
+  >
+    <a class:list={['btn-about']} href="/">Sobre mi</a>
+    <a class:list={['btn-project']} href="/project">Proyectos</a>
     <div class="absolute top-0" id="slider"></div>
   </div>
-  <div transition:persist class="nav-right-wapper hidden lg:flex  md:flex-row md:items-center">
-    <a target='_blank' class="flex flex-row h-12 mb-3"href="https://www.linkedin.com/in/braidafacu">Linkedin 
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-right-filled" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z" stroke-width="0" fill="currentColor"></path>
-      </svg>  
+  <div
+    transition:persist
+    class="nav-right-wapper invisible lg:flex md:visible md:flex-row md:items-center"
+  >
+    <a
+      target="_blank"
+      class="flex flex-row h-12 mb-3"
+      href="https://www.linkedin.com/in/braidafacu"
+      >Linkedin
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-arrow-big-right-filled"
+        width="30"
+        height="30"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path
+          d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z"
+          stroke-width="0"
+          fill="currentColor"></path>
+      </svg>
     </a>
-    <a target='_blank' class="flex flex-row h-12 mb-3" href="https://drive.google.com/drive/folders/1LfCuzI0iTYOmZZOzH-k9nDpUvnhcfVmu?usp=sharing">Resume 
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-right-filled" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z" stroke-width="0" fill="currentColor"></path>
-        </svg>
+    <a
+      target="_blank"
+      class="flex flex-row h-12 mb-3"
+      href="https://drive.google.com/drive/folders/1LfCuzI0iTYOmZZOzH-k9nDpUvnhcfVmu?usp=sharing"
+      >Resume
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-arrow-big-right-filled"
+        width="30"
+        height="30"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path
+          d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z"
+          stroke-width="0"
+          fill="currentColor"></path>
+      </svg>
     </a>
   </div>
 </div>
-<script >
+<script>
   const btn_about = document.querySelector('.btn-about');
   const btn_project = document.querySelector('.btn-project');
-  const slider= document.getElementById('slider')
-  if(window.location.pathname === '/'){
+  const slider = document.getElementById('slider');
+  if (window.location.pathname === '/') {
     btn_about?.classList.add('active');
     slider?.classList.add('leftPosition');
     slider?.classList.remove('rightPosition');
-  }
-  else{
+  } else {
     btn_project?.classList.add('active');
-    slider?.classList.add('rightPosition')
-    slider?.classList.remove('leftPosition')
+    slider?.classList.add('rightPosition');
+    slider?.classList.remove('leftPosition');
   }
 
   btn_about?.addEventListener('click', (e) => {
     e.preventDefault();
     btn_about?.classList.add('active');
     btn_project?.classList.remove('active');
-    if(slider){
+    if (slider) {
       slider.style.left = '40px';
     }
     setTimeout(() => {
-          window.location.href = "/";
-        }, 300);
-      });
+      window.location.href = '/';
+    }, 300);
+  });
 
-
-  
   btn_project?.addEventListener('click', (e) => {
     e.preventDefault();
     btn_project?.classList.add('active');
     btn_about?.classList.remove('active');
 
-    if(slider){
-      slider.style.left = "calc(50% + 2.5rem)";
+    if (slider) {
+      slider.style.left = 'calc(50% + 2.5rem)';
     }
-     setTimeout(() => {
-          window.location.href = "/project";
-        }, 300);
-      });
-
+    setTimeout(() => {
+      window.location.href = '/project';
+    }, 300);
+  });
 </script>
 
 <style lang="scss">
-
   #slider {
     width: 1rem; /* Ancho del slider */
     height: 3px; /* Altura del slider */
     background-color: #fff;
-    transition : left 0.3s ease-in-out;
-    box-shadow: 0 0 15px 5px rgb(3, 96, 158), 
-  /* inner white */0 0 35px 15px rgb(3, 102, 168), 
-  /* inner blue */0 0 350px 20px rgb(5, 126, 207);
-  
+    transition: left 0.3s ease-in-out;
+    box-shadow:
+      0 0 15px 5px rgb(3, 96, 158),
+      /* inner white */ 0 0 35px 15px rgb(3, 102, 168),
+      /* inner blue */ 0 0 350px 20px rgb(5, 126, 207);
   }
   .rightPosition {
-        left: calc(50% + 2.5rem);
+    left: calc(50% + 2.5rem);
   }
   .leftPosition {
-        left: 40px;
-      }
+    left: 40px;
+  }
 
-  
   .nav-bar {
-    font-family: 'Neue Montreal',sans-serif;
+    font-family: 'Neue Montreal', sans-serif;
     font-weight: 400;
   }
-  
-  a{
+
+  a {
     color: #fff;
     text-decoration: none;
     padding: 0.5rem;
@@ -118,42 +172,46 @@ const url = Astro.url.pathname;
     transition: 0.5s;
   }
   a:hover {
-     background-image: radial-gradient(
-      at 52% 100%,
-      hsla(204, 86%, 29%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 52% 100%, hsla(241, 86%, 29%, 1) 0px, transparent 50%);;
+    background-image: radial-gradient(
+        at 52% 100%,
+        hsla(204, 86%, 29%, 1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 52% 100%, hsla(241, 86%, 29%, 1) 0px, transparent 50%);
   }
   .nav-pill-wraper:hover {
     background-color: #6d6d6d31;
   }
-  
-  .nav-right-wapper{
-    a{
+
+  .nav-right-wapper {
+    a {
       padding: 0.8rem;
     }
   }
   .nav-pill-wraper {
     border-radius: 4rem;
-    border: 1px solid rgba(242, 242, 242, .1);
-    background-color: rgba(242, 242, 242, .05);
+    border: 1px solid rgba(242, 242, 242, 0.1);
+    background-color: rgba(242, 242, 242, 0.05);
     backdrop-filter: blur(15px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
-    transition: box-shadow 1s cubic-bezier(.23, 1, .32, 1), border .6s cubic-bezier(.165, .84, .44, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition:
+      box-shadow 1s cubic-bezier(0.23, 1, 0.32, 1),
+      border 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
-  .active{
+  .active {
     background-color: #66666623;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   }
-  .name-text{
-    text-shadow: 0 5px 10px rgba(0, 87, 255, .15), 0 -5px 10px rgba(255, 90, 0, .1), 0 -5px 25px rgba(255, 255, 255, .3);
+  .name-text {
+    text-shadow:
+      0 5px 10px rgba(0, 87, 255, 0.15),
+      0 -5px 10px rgba(255, 90, 0, 0.1),
+      0 -5px 25px rgba(255, 255, 255, 0.3);
   }
-  .carrer-text{
-    font-size:1rem;
+  .carrer-text {
+    font-size: 1rem;
     font-weight: 300;
     color: #f2f2f27b;
   }
-
 </style>
